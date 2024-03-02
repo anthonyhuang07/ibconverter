@@ -18,6 +18,7 @@ html {
 
 body{
     margin:0;
+    font-family: humanist, sans-serif;
     position: relative;
     background-size: cover;
     background-attachment: fixed;
@@ -56,14 +57,18 @@ h2 img {
 
 article {
     font-family: humanist, sans-serif;
-    font-weight: light;
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
 }
 
 div{
     margin: 2rem;
+}
+
+.lab {
+    margin-bottom: 0.5rem;
 }
 
 label {
@@ -73,11 +78,29 @@ label {
 select {
     padding: 0.5rem;
     border-radius: 0.5rem;
-    border: 0;
+    border: #7D7D7D 2px solid;
+    background-color: #1E2124;
+    color: white;
+    font-family: humanist, sans-serif;
+    width: 50%;
 }
 
 input {
     padding: 0.5rem;
     border-radius: 0.5rem;
+    border: #7D7D7D 2px solid;
+    background-color: #1E2124;
+    color: white;
+    font-family: humanist, sans-serif;
+    width: 25%;
+}
+
+button {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
     border: 0;
+    border: #7D7D7D 2px solid;
+    background-color: #1E2124;
+    color: white;
+    font-family: humanist, sans-serif;
 }

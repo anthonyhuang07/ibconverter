@@ -32,39 +32,43 @@
 <body>
     <main>
         <h1>Ontario IB Mark Converter</h1>
-        <label for="subject">Subject:</label>
-        <select name="subjects" id="subject">
-            <optgroup label="Group 1: Language & Literature">
-                <option value="eng" selected>HL English</option>
-            </optgroup>
-            <optgroup label="Group 2: Language Acquisition">
-                <option value="fsf">SL French</option>
-                <option value="fif">HL French</option>
-                <option value="esp">SL Spanish</option>
-            </optgroup>
-            <optgroup label="Group 3: Individuals & Societies">
-                <option value="econ">HL Economics</option>
-                <option value="geo">HL Geography</option>
-                <option value="bbb">SL Business</option>
-            </optgroup>
-            <optgroup label="Group 4: Sciences">
-                <option value="scha">SL Chemistry</option>
-                <option value="schb">HL Chemistry</option>
-                <option value="sbi">SL/HL Biology</option>
-                <option value="sphb">SL Physics</option>
-            </optgroup>
-            <optgroup label="Group 5: Mathematics">
-                <option value="mtha">SL Math</option>
-                <option value="mthb">HL Math</option>
-            </optgroup>
-            <optgroup label="Group 6: Arts">
-
-            </optgroup>
-        </select>
-        <label for="raw">Raw Mark:</label>
-        <input type="number" id="raw" name="rawmark" min="0" max="100"/>
-        <button type="submit" onclick="convert()">Convert!</button>
-
+        <article>
+            <label for="subject">Subject:</label>
+            <select name="subjects" id="subject">
+                <optgroup label="Group 1: Language & Literature">
+                    <option value="eng" selected>HL English</option>
+                </optgroup>
+                <optgroup label="Group 2: Language Acquisition">
+                    <option value="fsf">SL French</option>
+                    <option value="fif">HL French</option>
+                    <option value="esp">SL Spanish</option>
+                </optgroup>
+                <optgroup label="Group 3: Individuals & Societies">
+                    <option value="econ">HL Economics</option>
+                    <option value="geo">HL Geography</option>
+                    <option value="bbb">SL Business</option>
+                </optgroup>
+                <optgroup label="Group 4: Sciences">
+                    <option value="scha">SL Chemistry</option>
+                    <option value="schb">HL Chemistry</option>
+                    <option value="sbi">SL/HL Biology</option>
+                    <option value="sphb">SL Physics</option>
+                </optgroup>
+                <optgroup label="Group 5: Mathematics">
+                    <option value="mtha">SL Math</option>
+                    <option value="mthb">HL Math</option>
+                </optgroup>
+                <optgroup label="Group 6: Arts">
+    
+                </optgroup>
+            </select>
+            <div id="mode1">
+                <label for="raw">Raw Mark:</label>
+                <input type="text" id="raw" name="rawmark" oninput="num(this)" />
+            </div>
+            <button type="submit" onclick="convert()">Convert!</button>
+        </article>
+        <h2 id="result"></h2>
     </main>
     <script src="index.js"></script>
 </body>

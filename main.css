@@ -1,3 +1,8 @@
+@font-face {
+    font-family: humanist;
+    src: url(assets/fonts/humanist.otf);
+}
+
 *, *:after, *:before {
     outline: none;
     -webkit-box-sizing: border-box;
@@ -22,16 +27,57 @@ body{
 }
 
 main{
-    margin: 5rem;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
+    color: white;
+    align-items: center;
 }
 
 h1 {
-    color: white;
-    font-family: "Poppins", sans-serif;
-    font-weight:bold;
-    font-size: 2.5em;
+    margin: 5rem;
+    font-family: humanist, sans-serif;
+    font-weight: bolder;
+    font-size: 4em;
+}
+
+h2 {
+    margin: 5rem;
+    font-family: humanist, sans-serif;
+    font-weight: bolder;
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+}
+
+h2 img {
+    margin-right: 2rem;
+}
+
+article {
+    font-family: humanist, sans-serif;
+    font-weight: light;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+div{
+    margin: 2rem;
+}
+
+label {
+    font-size: 1.25em;
+}
+
+select {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0;
+}
+
+input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0;
 }

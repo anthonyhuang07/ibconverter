@@ -1,8 +1,3 @@
-@font-face {
-    font-family: humanist;
-    src: url(assets/fonts/humanist.otf);
-}
-
 *, *:after, *:before {
     outline: none;
     -webkit-box-sizing: border-box;
@@ -18,7 +13,7 @@ html {
 
 body{
     margin:0;
-    font-family: humanist, sans-serif;
+    font-family: "Poppins", sans-serif;
     position: relative;
     background-size: cover;
     background-attachment: fixed;
@@ -37,26 +32,24 @@ main{
 
 h1 {
     margin: 5rem;
-    font-family: humanist, sans-serif;
-    font-weight: bolder;
+    font-weight: 700;
     font-size: 4em;
+    text-align: center;
 }
 
 h2 {
     margin: 5rem;
-    font-family: humanist, sans-serif;
-    font-weight: bolder;
+    font-weight: 600;
     font-size: 3em;
     display: flex;
     align-items: center;
 }
 
 h2 img {
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 
 article {
-    font-family: humanist, sans-serif;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -67,40 +60,58 @@ div{
     margin: 2rem;
 }
 
-.lab {
-    margin-bottom: 0.5rem;
-}
-
-label {
-    font-size: 1.25em;
-}
-
 select {
     padding: 0.5rem;
     border-radius: 0.5rem;
     border: #7D7D7D 2px solid;
     background-color: #1E2124;
     color: white;
-    font-family: humanist, sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
     width: 50%;
+    text-align: center;
 }
 
 input {
     padding: 0.5rem;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
     border: #7D7D7D 2px solid;
+    border-bottom: none;
     background-color: #1E2124;
     color: white;
-    font-family: humanist, sans-serif;
-    width: 25%;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 400;
 }
 
+#mode {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+label {
+    font-size: 1em;
+    padding: 0.25rem;
+    border: #7D7D7D 2px solid;
+    border-radius: 0 0 0.5rem 0.5rem;
+    background-color: #1E2124;
+    font-weight: 400;
+}
+
+
 button {
-    padding: 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-size: 1.25em;
     border-radius: 0.5rem;
     border: 0;
     border: #7D7D7D 2px solid;
     background-color: #1E2124;
     color: white;
-    font-family: humanist, sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+} button:hover{
+
 }

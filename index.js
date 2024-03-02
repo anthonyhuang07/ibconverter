@@ -19,28 +19,27 @@ function convert() {
     let val = Math.floor(parseFloat(raw.value));
     let img = document.createElement("img"); //
     let span = document.createElement("span");
-
-    switch (subject.value) {
-        case "eng":
-            fetch('./data/eng.json')
-                .then(response => response.json())
-                .then(data => {
-                    for (let level in data) {
-                        if (data[level][val] !== undefined) {
-                            let levelNumber = parseInt(level.match(/\d+/)[0], 10) - 1;
-                            if (levelNumber >= 0 && levelNumber < emojis.length) {
-                                img.src = emojis[levelNumber];
-                                img.style.width = "150px";
-                                img.alt = "Level " + (levelNumber + 1);
-                            }
-                            span.innerHTML = level + ": " + data[level][val] + "%";
-                            result.appendChild(img);
-                            result.appendChild(span);
-                            break;
-                        }
+    let colSpan = document.createElement("span");
+    fetch('./data/eng.json')
+        .then(response => response.json())
+        .then(data => {
+            for (let level in data) {
+                if (data[level][val] !== undefined) {
+                    let levelNumber = parseInt(level.match(/\d+/)[0], 10) - 1;
+                    if (levelNumber >= 0 && levelNumber < emojis.length) {
+                        img.src = emojis[levelNumber];
+                        img.style.width = "150px";
+                        img.alt = "Level " + (levelNumber + 1);
                     }
-                });
-    }
+                    colSpan.innerHTML = level + ":&nbsp;"
+                    span.innerHTML = data[level][val] + "%";
+                    result.appendChild(img);
+                    result.appendChild(colSpan);
+                    result.appendChild(span);
+                    break;
+                }
+            }
+        });
 }
 
 

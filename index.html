@@ -33,7 +33,6 @@
     <main>
         <h1>Ontario IB Mark Converter</h1>
         <article>
-            <label for="subject" class="lab">Subject:</label>
             <select name="subjects" id="subject">
                 <optgroup label="Group 1: Language & Literature">
                     <option value="eng" selected>HL English</option>
@@ -62,9 +61,9 @@
     
                 </optgroup>
             </select>
-            <div id="mode1">
-                <label for="raw">Raw Mark:</label>
+            <div id="mode">
                 <input type="text" id="raw" name="rawmark" oninput="num(this)" />
+                <label for="raw">Raw Mark</label>
             </div>
             <button type="submit" onclick="convert()">Convert!</button>
         </article>

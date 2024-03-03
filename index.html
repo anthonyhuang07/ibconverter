@@ -31,44 +31,53 @@
 
 <body>
     <main>
-        <h1>Ontario IB Mark Converter</h1>
+        <h1>Ontario <span>IB</span> Mark Converter</h1>
         <article>
-            <select name="subjects" id="subject">
-                <optgroup label="Group 1: Language & Literature">
-                    <option value="eng" selected>HL English</option>
-                </optgroup>
-                <optgroup label="Group 2: Language Acquisition">
-                    <option value="fsf">SL French</option>
-                    <option value="fif">HL French</option>
-                    <option value="esp">SL Spanish</option>
-                </optgroup>
-                <optgroup label="Group 3: Individuals & Societies">
-                    <option value="econ">HL Economics</option>
-                    <option value="geo">HL Geography</option>
-                    <option value="bbb">SL Business</option>
-                </optgroup>
-                <optgroup label="Group 4: Sciences">
-                    <option value="scha">SL Chemistry</option>
-                    <option value="schb">HL Chemistry</option>
-                    <option value="sbia">SL Biology</option>
-                    <option value="sbib">HL Biology</option>
-                    <option value="sphb">SL Physics</option>
-                </optgroup>
-                <optgroup label="Group 5: Mathematics">
-                    <option value="mtha">SL Math</option>
-                    <option value="mthb">HL Math</option>
-                </optgroup>
-                <optgroup label="Group 6: Arts">
-    
-                </optgroup>
-            </select>
-            <div id="mode">
-                <input type="text" id="raw" name="rawmark" oninput="num(this)" />
-                <label for="raw">Raw Mark</label>
-            </div>
-            <button type="submit" onclick="convert()">Convert!</button>
+            <form id="converter" autocomplete="off">
+                <select name="subjects" id="subject">
+                    <optgroup label="Group 1: Language & Literature">
+                        <option value="0" selected>HL English</option>
+                    </optgroup>
+                    <optgroup label="Group 2: Language Acquisition">
+                        <option value="1">SL French</option>
+                        <option value="2">HL French</option>
+                        <option value="3">SL Spanish</option>
+                    </optgroup>
+                    <optgroup label="Group 3: Individuals & Societies">
+                        <option value="4">HL Economics</option>
+                        <option value="5">HL Geography</option>
+                        <option value="6">SL Business</option>
+                    </optgroup>
+                    <optgroup label="Group 4: Sciences">
+                        <option value="7">SL Chemistry</option>
+                        <option value="8">HL Chemistry</option>
+                        <option value="9">SL Biology</option>
+                        <option value="10">HL Biology</option>
+                        <option value="11">SL Physics</option>
+                    </optgroup>
+                    <optgroup label="Group 5: Mathematics">
+                        <option value="12">SL Math</option>
+                        <option value="13">HL Math</option>
+                    </optgroup>
+                    <optgroup label="Group 6: Arts">
+        
+                    </optgroup>
+                </select>
+                <div id="mode">
+                    <input type="text" id="raw" name="rawmark" oninput="num(this)" required/>
+                    <label for="raw">Raw Mark</label>
+                </div>
+                <button type="submit">Convert!</button>
+            </form>
+            <h2 id="result"></h2>
         </article>
-        <h2 id="result"></h2>
+        <hr>
+        <footer>
+            <a href="https://github.com/anthonyhuang07/ib-converter" target="_blank">Copyright (c) <span id="date"></span> Anthony Huang</a>
+            <a href="https://docs.google.com/document/d/1zrYgMIzQ4jiswH4EWfQKzweW7avs3IkQ5TwGorOTf6E/edit" id="master" target="_blank">Master Doc of IB Conversions</a>
+            <br>
+            <p><strong>Disclaimer:</strong> This work/product/service has been developed independently from and is not endorsed by the International Baccalaureate Organization. International Baccalaureate, Baccalauréat International, Bachillerato Internacional and IB are registered trademarks owned by the International Baccalaureate Organization.</p>
+        </footer>
     </main>
     <script src="index.js"></script>
 </body>

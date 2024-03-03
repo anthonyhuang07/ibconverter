@@ -1,8 +1,6 @@
-# Ontario IB Converter
-Converts your IB Raw Mark to a Converted OSSD Mark.
+# Ontario IB Mark Converter
+Converts marks between IB Raw Marks and Converted OSSD Marks.
 
-Conversions are up-to-date as of March 2024. Please report inaccurate conversions to fhdhgngn@ah07.xyz.
+Conversions were added on March 2024. Please report inaccurate/outdated conversions to fhdhgngn@ah07.xyz.
 
-### Disclaimer
-
-This work/product/service has been developed independently from and is not endorsed by the International Baccalaureate Organization. International Baccalaureate, Baccalauréat International, Bachillerato Internacional and IB are registered trademarks owned by the International Baccalaureate Organization.
+**Disclaimer:** This work/product/service has been developed independently from and is not endorsed by the International Baccalaureate Organization. International Baccalaureate, Baccalauréat International, Bachillerato Internacional and IB are registered trademarks owned by the International Baccalaureate Organization.

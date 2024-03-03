@@ -1,6 +1,8 @@
 const subject = document.getElementById("subject")
 const raw = document.getElementById("raw")
 const result = document.getElementById("result")
+const converter = document.getElementById("converter")
+const date = document.getElementById("date")
 
 const emojis = [
     "./assets/images/level1.png",
@@ -12,6 +14,11 @@ const emojis = [
     "./assets/images/level7.png"
 ];
 
+const jsons = [
+    "./data/eng.json",
+    "./data/fsf.json",
+]
+
 const colors = [
     "#f94144",
     "#f3722c",
@@ -19,18 +26,27 @@ const colors = [
     "#f9c74f",
     "#90be6d",
     "#43aa8b",
-    "#5C7B99"
+    "#2CBCED"
 ]
 
+d = new Date()
+date.innerHTML = d.getFullYear()
 
-function convert() {
+subject.addEventListener('change', function(e){
+    e.preventDefault();
+    result.innerHTML = ""
+})
+
+converter.addEventListener('submit', function(e) {
+    e.preventDefault();
+
     result.innerHTML = ""
 
     let val = Math.floor(parseFloat(raw.value));
     let img = document.createElement("img"); //
     let span = document.createElement("span");
     let colSpan = document.createElement("span");
-    fetch('./data/eng.json')
+    fetch(jsons[subject.value])
         .then(response => response.json())
         .then(data => {
             for (let level in data) {
@@ -51,7 +67,7 @@ function convert() {
                 }
             }
         });
-}
+})
 
 
 

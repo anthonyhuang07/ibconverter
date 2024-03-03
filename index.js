@@ -3,6 +3,7 @@ const raw = document.getElementById("raw")
 const result = document.getElementById("result")
 const converter = document.getElementById("converter")
 const date = document.getElementById("date")
+const converted = document.getElementById("converted")
 
 const emojis = [
     "./assets/images/level1.png",
@@ -42,10 +43,12 @@ converter.addEventListener('submit', function(e) {
     e.preventDefault();
 
     result.innerHTML = ""
+    converted.innerHTML = "";
 
     let val = Math.floor(parseFloat(raw.value));
-    let img = document.createElement("img"); //
-    let span = document.createElement("span");
+    let img = document.createElement("img");
+    let text = document.createElement("h2");
+    let textSpan = document.createElement("span");
     let colSpan = document.createElement("span");
     fetch(jsons[subject.value])
         .then(response => response.json())
@@ -53,17 +56,26 @@ converter.addEventListener('submit', function(e) {
             for (let level in data) {
                 if (data[level][val] !== undefined) {
                     let levelNum = parseInt(level.match(/\d+/)[0], 10) - 1;
-                    if (levelNum >= 0 && levelNum < emojis.length) {
-                        img.src = emojis[levelNum];
-                        img.style.width = "150px";
-                        img.alt = "Level " + (levelNum + 1);
+                    img.src = emojis[levelNum];
+                    img.style.width = "150px";
+                    img.alt = "Level " + (levelNum + 1);
+
+                    if (matchMedia('only screen and (max-width: 500px)').matches) {
+                        colSpan.innerHTML = level + ":"
+                    } else {
+                        colSpan.innerHTML = level + ":&nbsp;"
                     }
-                    colSpan.innerHTML = level + ":&nbsp;"
+
                     colSpan.style.color = colors[levelNum]
-                    span.innerHTML = data[level][val] + "%";
+                    textSpan.innerHTML = data[level][val] + "%";
+
+                    text.id = "converted"
+                    text.appendChild(colSpan);
+                    text.appendChild(textSpan);
+
+                    result.appendChild(text)
                     result.appendChild(img);
-                    result.appendChild(colSpan);
-                    result.appendChild(span);
+
                     break;
                 }
             }

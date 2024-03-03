@@ -17,6 +17,7 @@ const emojis = [
 const jsons = [
     "./data/eng.json",
     "./data/fsf.json",
+    "./data/fif.json",
 ]
 
 const colors = [
@@ -68,8 +69,6 @@ converter.addEventListener('submit', function(e) {
             }
         });
 })
-
-
 
 function num(input) {
     let value = input.value;

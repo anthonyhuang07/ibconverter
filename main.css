@@ -125,7 +125,7 @@ input {
     width: 50%;
 }
 
-label {
+#mode label {
     font-size: 1em;
     padding: 0.25rem;
     border: #7D7D7D 2px solid;

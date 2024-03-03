@@ -71,6 +71,9 @@ select {
     font-weight: 400;
     width: 50%;
     text-align: center;
+    transition: background-color 0.25s ease-in-out;
+} select:hover{
+    background-color: hsl(210, 9%, 10%);
 }
 
 input {
@@ -103,15 +106,38 @@ label {
 
 
 button {
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    position: relative;
+    padding: 0.5rem;
     font-size: 1.25em;
     border-radius: 0.5rem;
-    border: 0;
     border: #7D7D7D 2px solid;
     background-color: #1E2124;
     color: white;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-} button:hover{
+    z-index: 1;
+    width: 50%;
+} 
 
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #1E2124, #022B55);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    z-index: -1;
+    opacity: 0;
+}
+
+button:hover::before {
+    opacity: 1;
+}
+
+button:hover{
+    cursor: pointer;
 }

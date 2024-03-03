@@ -12,6 +12,16 @@ const emojis = [
     "./assets/images/level7.png"
 ];
 
+const colors = [
+    "#f94144",
+    "#f3722c",
+    "#f8961e",
+    "#f9c74f",
+    "#90be6d",
+    "#43aa8b",
+    "#5C7B99"
+]
+
 
 function convert() {
     result.innerHTML = ""
@@ -25,13 +35,14 @@ function convert() {
         .then(data => {
             for (let level in data) {
                 if (data[level][val] !== undefined) {
-                    let levelNumber = parseInt(level.match(/\d+/)[0], 10) - 1;
-                    if (levelNumber >= 0 && levelNumber < emojis.length) {
-                        img.src = emojis[levelNumber];
+                    let levelNum = parseInt(level.match(/\d+/)[0], 10) - 1;
+                    if (levelNum >= 0 && levelNum < emojis.length) {
+                        img.src = emojis[levelNum];
                         img.style.width = "150px";
-                        img.alt = "Level " + (levelNumber + 1);
+                        img.alt = "Level " + (levelNum + 1);
                     }
                     colSpan.innerHTML = level + ":&nbsp;"
+                    colSpan.style.color = colors[levelNum]
                     span.innerHTML = data[level][val] + "%";
                     result.appendChild(img);
                     result.appendChild(colSpan);

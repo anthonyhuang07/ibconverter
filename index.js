@@ -36,7 +36,10 @@ date.innerHTML = d.getFullYear()
 
 subject.addEventListener('change', function(e){
     e.preventDefault();
+    let text = document.createElement("h2");
+    text.innerHTML = "Converted Mark"
     result.innerHTML = ""
+    result.appendChild(text)
 })
 
 converter.addEventListener('submit', function(e) {
@@ -61,7 +64,7 @@ converter.addEventListener('submit', function(e) {
                     img.alt = "Level " + (levelNum + 1);
 
                     if (matchMedia('only screen and (max-width: 500px)').matches) {
-                        colSpan.innerHTML = level + ":"
+                        colSpan.innerHTML = level
                     } else {
                         colSpan.innerHTML = level + ":&nbsp;"
                     }

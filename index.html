@@ -27,9 +27,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/ebba275678.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <div id="bg"></div>
     <main>
         <h1>Ontario <span>IB</span> Mark Converter</h1>
         <div id="sub">
@@ -66,15 +69,20 @@
         </div>
         <article>
             <form id="converter" autocomplete="off">
-                <div id="mode">
-                    <input type="text" id="raw" name="rawmark" oninput="num(this)" required/>
-                    <label for="raw">Raw Mark</label>
+                <div id="top">
+                    <div id="in">
+                        <input type="text" id="raw" name="rawmark" oninput="num(this)" required/>
+                        <label for="raw">Raw Mark</label>
+                    </div>
+                    <div id="arrow">
+                        <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                    </div>
+                    <div id="result">
+                        <h2 id="converted">Converted<br>Mark</h2>
+                    </div>
                 </div>
                 <button type="submit">Convert!</button>
             </form>
-            <div id="result">
-                <h2 id="converted">Converted Mark</h2>
-            </div>
         </article>
         <hr>
         <footer>

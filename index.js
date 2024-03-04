@@ -28,7 +28,9 @@ const jsons = [
     "./data/schb.json",
     "./data/sbia.json",
     "./data/sbib.json",
-    "./data/sph.json"
+    "./data/sph.json",
+    "./data/mtha.json",
+    "./data/mthb.json"
 ]
 
 const colors = [

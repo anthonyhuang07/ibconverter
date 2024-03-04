@@ -84,7 +84,7 @@ function convert(){
 
                     if (matchMedia('only screen and (max-width: 500px)').matches) {
                         colSpan.innerHTML = level
-                        location.href = "#result"
+                        location.href = "#sub"
                     } else {
                         colSpan.innerHTML = level + ":&nbsp;"
                     }

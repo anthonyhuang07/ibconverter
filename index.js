@@ -20,7 +20,15 @@ const jsons = [
     "./data/eng.json",
     "./data/fsf.json",
     "./data/fif.json",
-    "./data/esp.json"
+    "./data/esp.json",
+    "./data/econ.json",
+    "./data/geo.json",
+    "./data/bbb.json",
+    "./data/scha.json",
+    "./data/schb.json",
+    "./data/sbia.json",
+    "./data/sbib.json",
+    "./data/sph.json"
 ]
 
 const colors = [
@@ -33,6 +41,8 @@ const colors = [
     "#2CBCED"
 ]
 
+let c = false
+
 d = new Date()
 date.innerHTML = d.getFullYear()
 
@@ -42,15 +52,18 @@ if (matchMedia('only screen and (max-width: 500px)').matches) {
 
 subject.addEventListener('change', function(e){
     e.preventDefault();
-    let text = document.createElement("h2");
-    text.innerHTML = "Converted Mark"
-    result.innerHTML = ""
-    result.appendChild(text)
+    if(c == true){
+        convert()
+    }
 })
 
 converter.addEventListener('submit', function(e) {
     e.preventDefault();
+    convert()
+    c = true
+})
 
+function convert(){
     result.innerHTML = ""
     converted.innerHTML = "";
 
@@ -71,6 +84,7 @@ converter.addEventListener('submit', function(e) {
 
                     if (matchMedia('only screen and (max-width: 500px)').matches) {
                         colSpan.innerHTML = level
+                        location.href = "#result"
                     } else {
                         colSpan.innerHTML = level + ":&nbsp;"
                     }
@@ -89,7 +103,7 @@ converter.addEventListener('submit', function(e) {
                 }
             }
         });
-})
+}
 
 function num(input) {
     let value = input.value;

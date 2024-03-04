@@ -11,6 +11,7 @@
 
 html {
     position: relative;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -103,7 +104,7 @@ select {
     color: white;
     font-family: "Poppins", sans-serif;
     font-size: 1em;
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
     transition: background-color 0.25s ease-in-out;
 }
@@ -167,7 +168,7 @@ form {
     border: #7D7D7D 2px solid;
     border-radius: 0 0 0.5rem 0.5rem;
     background-color: #1E2124;
-    font-weight: 400;
+    font-weight: 300;
     font-family: "Poppins", sans-serif;
 }
 
@@ -186,7 +187,7 @@ button {
     background-color: #1E2124;
     color: white;
     font-family: "Poppins", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     z-index: 1;
     width: auto;
 }
@@ -237,7 +238,8 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: hsl(210, 10%, 12.5%);
+    background-color: hsl(210, 10%, 12.5%); 
+    font-weight: 300;
 }
 
 footer a {
@@ -248,7 +250,6 @@ footer a {
 
 footer p {
     width: 60%;
-    font-weight: 300;
     font-size: 0.9em;
 }
 

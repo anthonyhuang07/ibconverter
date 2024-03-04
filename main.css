@@ -18,7 +18,7 @@ body {
     margin: 0;
     font-family: "Poppins", sans-serif;
     position: relative;
-    background-color: hsl(210, 11%, 15%);
+    background-color: hsl(210, 10%, 15%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -102,7 +102,7 @@ select {
     padding: 0.5rem 1rem 0.5rem 1rem;
     border-radius: 0.5rem;
     border: #7D7D7D 2px solid;
-    background-color: #1E2124;
+    background-color: hsl(210, 10%, 12.5%);
     color: white;
     font-family: "Poppins", sans-serif;
     font-size: 1em;
@@ -112,7 +112,7 @@ select {
 }
 
 select:hover {
-    background-color: hsl(210, 9%, 10%);
+    background-color: hsl(210, 10%, 10%);
 }
 
 form {
@@ -155,12 +155,17 @@ form {
     border-radius: 0.5rem 0.5rem 0 0;
     border: #7D7D7D 2px solid;
     border-bottom: none;
-    background-color: #1E2124;
+    background-color: hsl(210, 11%, 12.5%);
     color: white;
     font-family: "Poppins", sans-serif;
     text-align: center;
     font-size: 1.5em;
     font-weight: 500;
+    transition: background-color 0.25s ease-in-out;
+}
+
+#in input:hover {
+    background-color: hsl(210, 10%, 10%);
 }
 
 #in label {
@@ -169,7 +174,7 @@ form {
     padding: 0.25rem;
     border: #7D7D7D 2px solid;
     border-radius: 0 0 0.5rem 0.5rem;
-    background-color: #1E2124;
+    background-color: hsl(210, 10%, 12.5%);
     font-weight: 300;
     font-family: "Poppins", sans-serif;
 }
@@ -186,7 +191,7 @@ button {
     font-size: 1.25em;
     border-radius: 0.5rem;
     border: #7D7D7D 2px solid;
-    background-color: #1E2124;
+    background-color: hsl(210, 10%, 12.5%);
     color: white;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -201,7 +206,7 @@ button::before {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to bottom right, #1E2124, #002B6D);
+    background-image: linear-gradient(to bottom right, hsl(210, 10%, 12.5%), #002B6D);
     border-radius: inherit;
     opacity: 0;
     transition: opacity 0.25s ease-in-out;

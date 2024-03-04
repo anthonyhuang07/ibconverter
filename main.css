@@ -199,7 +199,7 @@ button::before {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to bottom right, #1E2124, #022B55);
+    background-image: linear-gradient(to bottom right, #1E2124, #002B6D);
     border-radius: inherit;
     opacity: 0;
     transition: opacity 0.25s ease-in-out;

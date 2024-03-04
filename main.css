@@ -260,6 +260,12 @@ footer p {
     font-size: 0.9em;
 }
 
+footer p a {
+    font-size: 1em;
+    color: #77C3FE;
+    text-decoration: underline;
+}
+
 #master {
     font-size: 1.25em;
     color: #77C3FE;

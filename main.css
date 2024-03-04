@@ -83,7 +83,7 @@ h1 span {
     50% {
         background-position: 100% 0;
     }
-}   
+}
 
 #sub {
     display: flex;
@@ -104,7 +104,7 @@ select {
     color: white;
     font-family: "Poppins", sans-serif;
     font-size: 1em;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
     transition: background-color 0.25s ease-in-out;
 }
@@ -238,7 +238,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: hsl(210, 10%, 12.5%); 
+    background-color: hsl(210, 10%, 12.5%);
     font-weight: 300;
 }
 
@@ -281,7 +281,7 @@ footer p {
         flex-direction: column;
     }
 
-    #top div{
+    #top div {
         width: 100%;
     }
 

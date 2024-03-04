@@ -19,13 +19,15 @@ body {
     position: relative;
     background-color: hsl(210, 11%, 15%);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #bg {
     position: absolute;
     width: 100%;
     height: 55%;
-    background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -40,7 +42,6 @@ main {
     color: white;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
 }
 
 article {
@@ -131,7 +132,7 @@ form {
     height: 100%;
     display: flex;
     align-items: center;
-    width: 33%;
+    width: 35%;
     justify-content: center;
 }
 
@@ -228,6 +229,7 @@ h2 {
 }
 
 footer {
+    color: white;
     margin-top: 3rem;
     text-align: center;
     font-family: "Poppins", sans-serif;
@@ -257,6 +259,10 @@ footer p {
 }
 
 @media screen and (max-width: 500px) {
+    #bg {
+        height: 40%;
+    }
+
     h1 {
         margin: 2rem 2rem 0 2rem;
         font-size: 2.25em;
@@ -270,24 +276,24 @@ footer p {
         height: auto;
     }
 
-    #sub {
-        margin-top: 0;
+    #top {
+        flex-direction: column;
+    }
+
+    #top div{
+        width: 100%;
+    }
+
+    #top in {
+        width: 100%;
+    }
+
+    #arrow {
+        margin: 2rem;
     }
 
     h2 {
         display: flex;
         flex-direction: column;
-    }
-
-    #result {
-        margin-right: 1rem;
-    }
-
-    footer {
-        width: 80%
-    }
-
-    footer p {
-        width: 100%;
     }
 }

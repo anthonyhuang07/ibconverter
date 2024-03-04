@@ -4,6 +4,7 @@ const result = document.getElementById("result")
 const converter = document.getElementById("converter")
 const date = document.getElementById("date")
 const converted = document.getElementById("converted")
+const icon = document.getElementById("icon")
 
 const emojis = [
     "./assets/images/level1.png",
@@ -19,6 +20,7 @@ const jsons = [
     "./data/eng.json",
     "./data/fsf.json",
     "./data/fif.json",
+    "./data/esp.json"
 ]
 
 const colors = [
@@ -33,6 +35,10 @@ const colors = [
 
 d = new Date()
 date.innerHTML = d.getFullYear()
+
+if (matchMedia('only screen and (max-width: 500px)').matches) {
+    icon.className = "fa-sharp fa-solid fa-arrow-down"
+}
 
 subject.addEventListener('change', function(e){
     e.preventDefault();

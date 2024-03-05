@@ -11,7 +11,6 @@
 
 html {
     position: relative;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -48,6 +47,8 @@ main {
 }
 
 article {
+    max-height: 1000rem;
+    width: 50rem;
     padding: 2rem;
     background-color: hsl(210, 10%, 17.5%);
     border-radius: 0.75rem;
@@ -55,7 +56,7 @@ article {
     flex-direction: row;
     justify-content: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 70%;
+    transition: max-height 0.25s ease-in-out;
 }
 
 h1 {
@@ -135,8 +136,9 @@ form {
     height: 100%;
     display: flex;
     align-items: center;
-    width: 35%;
+    width: 100%;
     justify-content: center;
+    margin: 0 2rem 0 2rem;
 }
 
 #top i {
@@ -228,17 +230,61 @@ button:hover {
     align-items: center;
 }
 
-h2 {
+#result h2 {
     font-weight: 600;
-    font-size: 3em;
+    font-size: 2.5em;
     display: flex;
     align-items: center;
     font-family: "Poppins", sans-serif;
 }
 
+#bottom {
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-template-areas:
+        "header header header"
+        "level raw conv";
+    text-align: center;
+    width: auto;
+}
+
+#bottom h2 {
+    margin: 4rem 0 0.5rem 0;
+    font-weight: 600;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    grid-area: header;
+    justify-content: center;
+}
+
+#bottom h3 {
+    font-weight: 500;
+    font-size: 1.25em;
+    margin-bottom: 0.25rem;
+}
+
+#bottom p{
+    border-top: 1px hsl(210, 10%, 25%) solid;
+    padding: 0.25rem 0 0.25rem 0;
+}
+
+#bottom #section-lvl {
+    grid-area: level;
+}
+
+#bottom #section-raw {
+    grid-area: raw;
+}
+
+#bottom #section-conv {
+    grid-area: conv;
+}
+
 footer {
     color: white;
-    margin-top: 3rem;
+    margin-top: 4rem;
     text-align: center;
     font-family: "Poppins", sans-serif;
     padding: 1.5em;
@@ -272,7 +318,12 @@ footer p a {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
+
+    html {
+        scroll-behavior: smooth;
+    }
+
     h1 {
         margin: 2rem 2rem 0 2rem;
         font-size: 2.25em;
@@ -292,14 +343,19 @@ footer p a {
 
     #top div {
         width: 100%;
+        margin: 1rem 0 1rem 0;
     }
 
-    #top in {
-        width: 100%;
+    #top #in {
+        width: 80%;
     }
 
     #arrow {
         margin: 2rem;
+    }
+
+    #bottom div {
+        margin: 0;
     }
 
     h2 {

@@ -160,7 +160,7 @@ function convert() {
                         } else if (value < val && value > cVal) {
                             cVal = value;
                             raw = cKey;
-                            lvl = level;
+                            lvl = "~" + level;
                         }
                     });
                 }

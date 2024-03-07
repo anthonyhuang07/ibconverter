@@ -48,7 +48,7 @@ main {
 
 article {
     max-height: 1000rem;
-    width: 50rem;
+    width: auto;
     padding: 2rem;
     background-color: hsl(210, 10%, 17.5%);
     border-radius: 0.75rem;
@@ -127,31 +127,25 @@ form {
 
 #top {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
     width: 100%;
 }
 
 #top div {
-    height: 100%;
     display: flex;
     align-items: center;
     width: 100%;
-    justify-content: center;
     margin: 0 2rem 0 2rem;
+    justify-content: center;
 }
 
-#top i {
-    font-size: 3em;
-}
-
-#in {
+#top #in {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#in input {
+#top #in input {
     width: 100%;
     padding: 0.5rem;
     border-radius: 0.5rem 0.5rem 0 0;
@@ -166,11 +160,12 @@ form {
     transition: background-color 0.25s ease-in-out;
 }
 
-#in input:hover {
+#top #in input:hover {
     background-color: hsl(210, 10%, 10%);
 }
 
-#in label {
+#top #in select {
+    margin: 0;
     width: 100%;
     font-size: 1em;
     padding: 0.25rem;
@@ -181,8 +176,31 @@ form {
     font-family: "Poppins", sans-serif;
 }
 
-#arrow {
-    width: 20% !important;
+#top #in select:hover {
+    background-color: hsl(210, 10%, 10%);
+}
+
+#top #arrow {
+    width: auto;
+}
+
+#top #arrow i {
+    font-size: 3em;
+}
+
+#top #result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#top #result h2 {
+    font-weight: 600;
+    font-size: 2.5em;
+    display: flex;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
 }
 
 
@@ -222,20 +240,6 @@ button:hover::before {
 
 button:hover {
     cursor: pointer;
-}
-
-#result {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#result h2 {
-    font-weight: 600;
-    font-size: 2.5em;
-    display: flex;
-    align-items: center;
-    font-family: "Poppins", sans-serif;
 }
 
 #bottom {

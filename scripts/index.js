@@ -18,9 +18,13 @@ function num(input) {
 
     if (value.match(/^100(\.0+)?$/)) {
         input.value = '100';
-    } else if (!value.match(/^\d{0,3}(\.\d{0,2})?$/) || parseFloat(value) > 100) {
+        return;
+    }
+
+    if (!value.match(/^\d{1,2}(\.\d{0,2})?$/) && !(value.match(/^100$/) && value.length === 3) || parseFloat(value) > 100) {
         input.value = value.slice(0, -1);
     } else {
         input.value = value;
     }
 }
+

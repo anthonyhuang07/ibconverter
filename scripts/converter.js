@@ -88,7 +88,7 @@ mode.addEventListener('change', function (e) {
     raw.value = raw21.value = raw22.value = ""
     result.innerHTML = `
     <h2 id="converted">Converted Mark</h2>
-    <img src="./assets/images/default.png" width="150px" id="joobi"/>`
+    <img src="./assets/images/default.png" width="150px" id="joobi" alt="cookie muncher"/>`
 
     if (mode.value == "raw"){
         raw.style.display = "inline-block"

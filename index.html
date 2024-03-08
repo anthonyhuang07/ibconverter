@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -37,7 +37,7 @@
         <h1>Ontario <span>IB</span> Mark Converter</h1>
         <div id="sub">
             <label for="subjects">Choose your Subject:</label>
-            <select name="subjects" id="subject">
+            <select name="subjects" id="subject" aria-label="Subjects">
                 <optgroup label="Group 1: Language & Literature">
                     <option value="0" selected>HL English</option>
                 </optgroup>
@@ -71,12 +71,12 @@
             <form id="converter" autocomplete="off">
                 <div id="top">
                     <div id="in">
-                        <input type="text" id="mark" name="rawmark" oninput="num(this)"/>
+                        <input type="text" id="mark" name="rawmark" aria-label="Raw Mark" oninput="num(this)"/>
                         <div id="mark2">
-                            <input type="text" id="mark21" name="fracraw" oninput="num2(this)"/>
-                            <input type="text" id="mark22" name="fracraw2" oninput="num2(this)"/>
+                            <input type="text" id="mark21" name="fracraw" aria-label="Achieved Marks" oninput="num2(this)"/>
+                            <input type="text" id="mark22" name="fracraw2" aria-label="Total Marks" oninput="num2(this)"/>
                         </div>
-                        <select name="modes" id="mode">
+                        <select name="modes" id="mode" aria-label="Mode Select">
                             <option value="raw">Raw Mark</option>
                             <option value="frac">Raw Fraction</option>
                         </select>     
@@ -103,7 +103,7 @@
         </section>
     </main>
     <footer>
-        <p>This website is open-source on <a href="https://github.com/anthonyhuang07/ibconverter">GitHub.</a> If anybody has the conversions for IB Art and IB Music, or there are inaccurate/outdated conversions, please contact me on Discord at @fhdhgngn, or submit a pull request in the repository!</p>
+        <p>This website is open-source on <a href="https://github.com/anthonyhuang07/ibconverter">GitHub.</a> If anybody has the conversions for IB Art, or there are inaccurate/outdated conversions, please contact me on Discord at @fhdhgngn, or submit a pull request in the repository!</p>
         <br>
         <p><strong>Disclaimer:</strong> This work/product/service has been developed independently from and is not endorsed by the International Baccalaureate Organization. International Baccalaureate, Baccalauréat International, Bachillerato Internacional and IB are registered trademarks owned by the International Baccalaureate Organization.</p>
         <br>

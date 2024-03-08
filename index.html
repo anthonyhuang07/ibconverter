@@ -71,10 +71,14 @@
             <form id="converter" autocomplete="off">
                 <div id="top">
                     <div id="in">
-                        <input type="text" id="mark" name="rawmark" oninput="num(this)" required/>
+                        <input type="text" id="mark" name="rawmark" oninput="num(this)"/>
+                        <div id="mark2">
+                            <input type="text" id="mark21" name="fracraw" oninput="num2(this)"/>
+                            <input type="text" id="mark22" name="fracraw2" oninput="num2(this)"/>
+                        </div>
                         <select name="modes" id="mode">
                             <option value="raw">Raw Mark</option>
-                            <option value="conv">Converted Mark</option>
+                            <option value="frac">Raw Fraction</option>
                         </select>     
                     </div>
                     <div id="arrow">

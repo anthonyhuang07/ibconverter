@@ -1,5 +1,8 @@
 const subject = document.getElementById("subject")
 const raw = document.getElementById("mark")
+const raw2 = document.getElementById("mark2")
+const raw21 = document.getElementById("mark21")
+const raw22 = document.getElementById("mark22")
 const result = document.getElementById("result")
 const converter = document.getElementById("converter")
 const converted = document.getElementById("converted")
@@ -81,20 +84,17 @@ subject.addEventListener('change', function (e) {
 })
 
 mode.addEventListener('change', function (e) {
-    const result = document.getElementById("result")
-    const mode = document.getElementById("mode")
-
-    mark.value = ""
+    c = false
     result.innerHTML = `
-    <h2 id="converted"></h2>
+    <h2 id="converted">Converted Mark</h2>
     <img src="./assets/images/default.png" width="150px" id="joobi"/>`
 
-    const converted = document.getElementById("converted")
-
-    if(mode.value == "raw"){
-        converted.innerHTML = "Converted Mark";
-    } else if (mode.value == "conv"){
-        converted.innerHTML = "Raw Mark"
+    if (mode.value == "raw"){
+        raw.style.display = "inline-block"
+        raw2.style.display = "none"
+    } else if (mode.value == "frac"){
+        raw.style.display = "none"
+        raw2.style.display = "flex"
     }
 })
 
@@ -110,78 +110,74 @@ function convert() {
     const converted = document.getElementById("converted")
     const joobi = document.getElementById("joobi")
 
-    converted.innerHTML = ""
-    joobi.src = "";
-
-    let val = parseInt(Math.floor(parseFloat(mark.value)));
     let textSpan = document.createElement("span");
     let colSpan = document.createElement("span");
 
     fetch(jsons[subject.value])
         .then(response => response.json())
         .then(data => {
-            if (mode.value == "raw"){
-                for (let level in data) {
-                    if (data[level][val] !== undefined) {
-                        let levelNum = parseInt(level.match(/\d+/)[0], 10) - 1;
-                        joobi.src = emojis[levelNum];
-                        joobi.alt = level;
+            if (mode.value == "raw") {
+                let val = parseInt(Math.floor(parseFloat(mark.value)));
+                if (mark.value == "") {
+                    alert("Please enter a valid number.")
+                } else {
 
-                        if (matchMedia('only screen and (max-width: 900px)').matches) {
-                            colSpan.innerHTML = level
-                            location.href = "#sub"
-                        } else {
-                            colSpan.innerHTML = level + ":&nbsp;"
-                        }
+                    converted.innerHTML = ""
+                    joobi.src = ""
 
-                        colSpan.style.color = colors[levelNum]
-                        textSpan.innerHTML = data[level][val] + "%";
+                    for (let level in data) {
+                        if (data[level][val] !== undefined) {
+                            let levelNum = parseInt(level.match(/\d+/)[0], 10) - 1;
+                            joobi.src = emojis[levelNum];
+                            joobi.alt = level;
 
-                        converted.appendChild(colSpan);
-                        converted.appendChild(textSpan);
-
-                        break;
-                    }
-                }
-            } else if (mode.value == "conv"){
-                let raw = lvl = undefined;
-                let cVal = -Infinity;
-                
-                for (let level in data) {
-                    Object.keys(data[level]).forEach(key => {
-                        let cKey = parseInt(key, 10);
-                        let value = data[level][key];
-                
-                        if (value === val) {
-                            if (raw === undefined || cKey > raw) {
-                                raw = cKey;
-                                lvl = level;
+                            if (matchMedia('only screen and (max-width: 900px)').matches) {
+                                colSpan.innerHTML = level
+                                location.href = "#sub"
+                            } else {
+                                colSpan.innerHTML = level + ":&nbsp;"
                             }
-                        } else if (value < val && value > cVal) {
-                            cVal = value;
-                            raw = cKey;
-                            lvl = "~" + level;
+
+                            colSpan.style.color = colors[levelNum]
+                            textSpan.innerHTML = data[level][val] + "%";
+
+                            converted.appendChild(colSpan);
+                            converted.appendChild(textSpan);
+
+                            break;
                         }
-                    });
-                }
-                
-                if (raw !== undefined && lvl !== undefined) {  
-                    let levelNum = parseInt(lvl.match(/\d+/)[0], 10) - 1;
-                    joobi.src = emojis[levelNum];
-                    joobi.alt = lvl;
-                
-                    if (matchMedia('only screen and (max-width: 900px)').matches) {
-                        colSpan.innerHTML = lvl;
-                        location.href = "#sub";
-                    } else {
-                        colSpan.innerHTML = lvl + ":&nbsp;";
                     }
-                
-                    colSpan.style.color = colors[levelNum];
-                    textSpan.innerHTML = raw + "%";
-                
-                    converted.appendChild(colSpan);
-                    converted.appendChild(textSpan);
+                }
+            } else if (mode.value == "frac") {
+                let val = parseInt(Math.floor(parseFloat(mark21.value/mark22.value) * 100)) ;
+                if (mark21.value == "" || mark22.value == "" || val > 100) {
+                    alert("Please enter a valid mark.")
+                } else {
+                    converted.innerHTML = ""
+                    joobi.src = ""
+
+                    for (let level in data) {
+                        if (data[level][val] !== undefined) {
+                            let levelNum = parseInt(level.match(/\d+/)[0], 10) - 1;
+                            joobi.src = emojis[levelNum];
+                            joobi.alt = level;
+
+                            if (matchMedia('only screen and (max-width: 900px)').matches) {
+                                colSpan.innerHTML = level
+                                location.href = "#sub"
+                            } else {
+                                colSpan.innerHTML = level + ":&nbsp;"
+                            }
+
+                            colSpan.style.color = colors[levelNum]
+                            textSpan.innerHTML = data[level][val] + "%";
+
+                            converted.appendChild(colSpan);
+                            converted.appendChild(textSpan);
+
+                            break;
+                        }
+                    }
                 }
             }
         });

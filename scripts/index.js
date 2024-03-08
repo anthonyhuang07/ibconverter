@@ -12,8 +12,8 @@ if (matchMedia('only screen and (max-width: 900px)').matches) {
 function num(input) {
     let value = input.value;
 
-    if (value.length > 1 && value.startsWith('0') && !value.startsWith('0.')) {
-        value = value.replace(/^0+/, '');
+    if (value.startsWith('0') && !value.startsWith('0.') && value.length > 1) {
+        value = '0';
     }
 
     if (value.match(/^100(\.0+)?$/)) {
@@ -21,10 +21,23 @@ function num(input) {
         return;
     }
 
-    if (!value.match(/^\d{1,2}(\.\d{0,2})?$/) && !(value.match(/^100$/) && value.length === 3) || parseFloat(value) > 100) {
+    if ((!value.match(/^\d{1,2}(\.\d{0,2})?$/) && !(value.match(/^100$/) && value.length === 3) || parseFloat(value) > 100)) {
         input.value = value.slice(0, -1);
     } else {
         input.value = value;
     }
 }
 
+function num2(input) {
+    let value = input.value;
+
+    if (value.startsWith('0') && !value.startsWith('0.')) {
+        value = value.replace(/^0+/, '0');
+    }
+
+    if (!value.match(/^\d*\.?\d*$/)) {
+        input.value = value.slice(0, -1);
+    } else {
+        input.value = value;
+    }
+}

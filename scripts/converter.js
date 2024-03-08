@@ -117,67 +117,45 @@ function convert() {
     fetch(jsons[subject.value])
         .then(response => response.json())
         .then(data => {
+            let val = undefined;
             if (mode.value == "raw") {
-                let val = parseInt(Math.floor(parseFloat(mark.value)));
                 if (mark.value == "") {
                     alert("Please enter a valid number.")
                 } else {
-
-                    converted.innerHTML = ""
-                    joobi.src = ""
-
-                    for (let level in data) {
-                        if (data[level][val] !== undefined) {
-                            let levelNum = parseInt(level.match(/\d+/)[0], 10) - 1;
-                            joobi.src = emojis[levelNum];
-                            joobi.alt = level;
-
-                            if (matchMedia('only screen and (max-width: 900px)').matches) {
-                                colSpan.innerHTML = level
-                                location.href = "#sub"
-                            } else {
-                                colSpan.innerHTML = level + ":&nbsp;"
-                            }
-
-                            colSpan.style.color = colors[levelNum]
-                            textSpan.innerHTML = data[level][val] + "%";
-
-                            converted.appendChild(colSpan);
-                            converted.appendChild(textSpan);
-
-                            break;
-                        }
-                    }
+                    val = parseInt(Math.floor(parseFloat(mark.value)));
                 }
             } else if (mode.value == "frac") {
-                let val = parseInt(Math.floor(parseFloat(mark21.value/mark22.value) * 100)) ;
                 if (mark21.value == "" || mark22.value == "" || val > 100) {
                     alert("Please enter a valid mark.")
                 } else {
-                    converted.innerHTML = ""
-                    joobi.src = ""
+                    val = parseInt(Math.floor(parseFloat(mark21.value/mark22.value) * 100)) ;
+                }
+            }
 
-                    for (let level in data) {
-                        if (data[level][val] !== undefined) {
-                            let levelNum = parseInt(level.match(/\d+/)[0], 10) - 1;
-                            joobi.src = emojis[levelNum];
-                            joobi.alt = level;
-
-                            if (matchMedia('only screen and (max-width: 900px)').matches) {
-                                colSpan.innerHTML = level
-                                location.href = "#sub"
-                            } else {
-                                colSpan.innerHTML = level + ":&nbsp;"
-                            }
-
-                            colSpan.style.color = colors[levelNum]
-                            textSpan.innerHTML = data[level][val] + "%";
-
-                            converted.appendChild(colSpan);
-                            converted.appendChild(textSpan);
-
-                            break;
+            if (val !== undefined) {
+                converted.innerHTML = ""
+                joobi.src = ""
+    
+                for (let level in data) {
+                    if (data[level][val] !== undefined) {
+                        let levelNum = parseInt(level.match(/\d+/)[0], 10) - 1;
+                        joobi.src = emojis[levelNum];
+                        joobi.alt = level;
+    
+                        if (matchMedia('only screen and (max-width: 900px)').matches) {
+                            colSpan.innerHTML = level
+                            location.href = "#sub"
+                        } else {
+                            colSpan.innerHTML = level + ":&nbsp;"
                         }
+    
+                        colSpan.style.color = colors[levelNum]
+                        textSpan.innerHTML = data[level][val] + "%";
+    
+                        converted.appendChild(colSpan);
+                        converted.appendChild(textSpan);
+    
+                        break;
                     }
                 }
             }

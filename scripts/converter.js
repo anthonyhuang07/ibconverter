@@ -16,13 +16,13 @@ const sectionraw = document.getElementById("section-raw")
 const sectionconv = document.getElementById("section-conv")
 
 const emojis = [
-    "./assets/images/level1.png",
-    "./assets/images/level2.png",
-    "./assets/images/level3.png",
-    "./assets/images/level4.png",
-    "./assets/images/level5.png",
-    "./assets/images/level6.png",
-    "./assets/images/level7.png"
+    "./assets/images/level1.avif",
+    "./assets/images/level2.avif",
+    "./assets/images/level3.avif",
+    "./assets/images/level4.avif",
+    "./assets/images/level5.avif",
+    "./assets/images/level6.avif",
+    "./assets/images/level7.avif"
 ];
 
 const jsons = [
@@ -88,7 +88,7 @@ mode.addEventListener('change', function (e) {
     raw.value = raw21.value = raw22.value = ""
     result.innerHTML = `
     <h2 id="converted">Converted Mark</h2>
-    <img src="./assets/images/default.png" width="150px" id="joobi" alt="cookie muncher"/>`
+    <img src="./assets/images/default.avif" width="150px" id="joobi" alt="cookie muncher"/>`
 
     if (mode.value == "raw"){
         raw.style.display = "inline-block"

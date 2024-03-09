@@ -33,7 +33,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url("./assets/images/bg.jpg");
+    background-image: url("./assets/images/bg.avif");
     z-index: -1;
 }
 

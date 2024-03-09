@@ -128,6 +128,7 @@ form {
 #top {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
@@ -182,6 +183,7 @@ form {
 
 #top #in #mark2 {
     display: none;
+    margin: 0;
 } #top #in #mark2 #mark21 {
     border-top-right-radius: 0;
     border-right: #7D7D7D 1px solid;

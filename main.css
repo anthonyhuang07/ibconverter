@@ -112,10 +112,6 @@ select {
     transition: background-color 0.25s ease-in-out;
 }
 
-select option {
-    text-align: left;
-}
-
 select:hover {
     background-color: hsl(210, 10%, 10%);
 }

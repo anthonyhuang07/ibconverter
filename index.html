@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <title>Ontario IB Converter</title>
     <meta content="Ontario IB Mark Converter" property="og:title" />
-    <meta name="description" content="A website to help you convert your IB Raw Marks to Ontario Marks!" property="og:description" />
+    <meta name="description" content="A website to help you convert your IB Raw Marks to Ontario Marks!"
+        property="og:description" />
     <meta content="https://ah07.xyz/ibconverter" property="og:url" />
     <meta content="https://www.ibschoolsofontario.ca/wp-content/uploads/2018/12/IB-world-shools-1.png"
         property="og:image" />
@@ -63,7 +64,7 @@
                     <option value="13">HL Math</option>
                 </optgroup>
                 <optgroup label="Group 6: Arts">
-    
+
                 </optgroup>
             </select>
         </div>
@@ -71,22 +72,24 @@
             <form id="converter" autocomplete="off">
                 <div id="top">
                     <div id="in">
-                        <input type="text" id="mark" name="rawmark" aria-label="Raw Mark" oninput="num(this)"/>
+                        <input type="text" id="mark" name="rawmark" aria-label="Raw Mark" oninput="num(this)" />
                         <div id="mark2">
-                            <input type="text" id="mark21" name="fracraw" aria-label="Achieved Marks" oninput="num2(this)"/>
-                            <input type="text" id="mark22" name="fracraw2" aria-label="Total Marks" oninput="num2(this)"/>
+                            <input type="text" id="mark21" name="fracraw" aria-label="Achieved Marks"
+                                oninput="num2(this)" />
+                            <input type="text" id="mark22" name="fracraw2" aria-label="Total Marks"
+                                oninput="num2(this)" />
                         </div>
                         <select name="modes" id="mode" aria-label="Mode Select">
                             <option value="raw">Raw Mark</option>
                             <option value="frac">Raw Fraction</option>
-                        </select>     
+                        </select>
                     </div>
                     <div id="arrow">
                         <i id="icon" class="fa-sharp fa-solid fa-arrow-right"></i>
                     </div>
                     <div id="result">
                         <h2 id="converted">Converted Mark</h2>
-                        <img src="./assets/images/default.avif" width="150px" id="joobi" alt="cookie muncher"/>
+                        <img src="./assets/images/default.avif" width="150px" id="joobi" alt="cookie muncher" />
                     </div>
                 </div>
                 <button type="submit">Convert!</button>
@@ -103,14 +106,21 @@
         </section>
     </main>
     <footer>
-        <p>This website is open-source on <a href="https://github.com/anthonyhuang07/ibconverter">GitHub.</a> If anybody has the conversions for IB Art, or there are inaccurate/outdated conversions, please contact me on Discord at @fhdhgngn, or submit a pull request in the repository!</p>
+        <p>This website is open-source on <a href="https://github.com/anthonyhuang07/ibconverter">GitHub.</a> If anybody
+            has the conversions for IB Art, or there are inaccurate/outdated conversions, please contact me on Discord
+            at @fhdhgngn, or submit a pull request in the repository!</p>
         <br>
-        <p><strong>Disclaimer:</strong> This work/product/service has been developed independently from and is not endorsed by the International Baccalaureate Organization. International Baccalaureate, Baccalauréat International, Bachillerato Internacional and IB are registered trademarks owned by the International Baccalaureate Organization.</p>
+        <p><strong>Disclaimer:</strong> This work/product/service has been developed independently from and is not
+            endorsed by the International Baccalaureate Organization. International Baccalaureate, Baccalauréat
+            International, Bachillerato Internacional and IB are registered trademarks owned by the International
+            Baccalaureate Organization.</p>
         <br>
         <p>Version 1.2.0</p>
         <br>
-        <a href="https://docs.google.com/document/d/1zrYgMIzQ4jiswH4EWfQKzweW7avs3IkQ5TwGorOTf6E/edit" id="master" target="_blank">Master Doc of IB Conversions</a>
-        <a href="https://github.com/anthonyhuang07/ib-converter" target="_blank">Copyright (c) <span id="date"></span> Anthony Huang</a>
+        <a href="https://docs.google.com/document/d/1zrYgMIzQ4jiswH4EWfQKzweW7avs3IkQ5TwGorOTf6E/edit" id="master"
+            target="_blank">Master Doc of IB Conversions</a>
+        <a href="https://github.com/anthonyhuang07/ib-converter" target="_blank">Copyright (c) <span id="date"></span>
+            Anthony Huang</a>
     </footer>
     <script src="./scripts/index.js"></script>
     <script src="./scripts/converter.js"></script>

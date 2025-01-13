@@ -1,5 +1,5 @@
 # Ontario IB Mark Converter
-Converts marks between IB Raw Marks and Converted OSSD Marks.
+Converts your IB Raw Mark to a Converted OSSD Mark.
 
 Conversions were added on March 2024. Please report inaccurate/outdated conversions to anthony@ah07.xyz.
 

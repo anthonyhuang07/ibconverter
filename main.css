@@ -37,6 +37,19 @@ body {
     z-index: -1;
 }
 
+header {
+    background-color: #FFC107;
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    p {
+        padding: 1rem;
+    }
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -110,6 +123,7 @@ select {
     font-weight: 400;
     text-align: center;
     transition: background-color 0.25s ease-in-out;
+    cursor: pointer;
 }
 
 select:hover {
@@ -312,20 +326,14 @@ footer {
 }
 
 footer a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1em;
+    color: #77C3FE;
+    text-decoration: underline;
 }
 
 footer p {
     width: 70%;
     font-size: 0.9em;
-}
-
-footer p a {
-    font-size: 1em;
-    color: #77C3FE;
-    text-decoration: underline;
 }
 
 #master {

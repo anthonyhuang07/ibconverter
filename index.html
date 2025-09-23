@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <title>Ontario IB Grade Converter</title>
     <meta content="Ontario IB Grade Converter" property="og:title" />
-    <meta name="description" content="A simple website to help Ontario highschool students convert their Raw IB Marks to Ontario (OSSD) Marks!"
+    <meta name="description" content="A simple tool to help IBDP students convert their Raw IB Marks to Ontario (OSSD) Marks!"
         property="og:description" />
-    <meta content="https://ah07.xyz/ibconverter" property="og:url" />
+    <meta content="https://ibconverter.com" property="og:url" />
     <meta content="https://www.ibschoolsofontario.ca/wp-content/uploads/2018/12/IB-world-shools-1.png"
         property="og:image" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,13 +34,16 @@
 
 <body>
     <div id="bg"></div>
+    <header>
+        <p><strong>ibconverter.live is moving!</strong> Starting October 16, this website will become <strong>ibconverter.com</strong>. Until then, ibconverter.live will remain operational.</p>
+    </header>
     <main>
         <h1>Ontario <span>IB</span> Grade Converter</h1>
         <div id="sub">
             <label for="subjects">Choose your Subject:</label>
             <select name="subjects" id="subject" aria-label="Subjects">
                 <optgroup label="Group 1: Language & Literature">
-                    <option value="0" selected>HL English/ToK</option>
+                    <option value="0" selected>HL English/TOK</option>
                 </optgroup>
                 <optgroup label="Group 2: Language Acquisition">
                     <option value="1">SL French</option>
@@ -63,9 +66,8 @@
                     <option value="12">SL Math</option>
                     <option value="13">HL Math</option>
                 </optgroup>
-                <optgroup label="Group 6: Arts">
-
-                </optgroup>
+                <!-- <optgroup label="Group 6: Arts">
+                </optgroup> -->
             </select>
         </div>
         <article>
@@ -106,7 +108,7 @@
         </section>
     </main>
     <footer>
-        <p>This website is open-source on <a href="https://github.com/anthonyhuang07/ibconverter">GitHub.</a> If there are inaccurate/outdated conversions, feel free to submit a pull request in the repository!</p>
+        <p>This website is open-source on <a href="https://github.com/anthonyhuang07/ibconverter">GitHub.</a> If there are inaccurate or outdated conversions, please submit a pull request in the repository!</p>
         <br>
         <p><a href="https://blog.anthonyhuang.net/posts/woss-ib-year1-guide/#conversions" target="_blank">How do these conversions work?</a></p>
         <br>
@@ -115,8 +117,8 @@
             International, Bachillerato Internacional and IB are registered trademarks owned by the International
             Baccalaureate Organization.</p>
         <br>
-        <a href="https://github.com/anthonyhuang07/ib-converter" target="_blank">Copyright (c) <span id="date"></span>
-            Anthony Huang</a>
+        <p>Made by a WOSS IBDP '25 Graduate 💙</p>
+        <a href="https://anthonyhuang.net" target="_blank">anthonyhuang.net</a>
     </footer>
     <script src="./scripts/index.js"></script>
     <script src="./scripts/converter.js"></script>

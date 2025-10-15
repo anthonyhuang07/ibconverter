@@ -37,7 +37,7 @@ body {
     z-index: -1;
 }
 
-header {
+/* header {
     background-color: #FFC107;
     min-height: 2rem;
     display: flex;
@@ -48,7 +48,7 @@ header {
     p {
         padding: 1rem;
     }
-}
+} */
 
 main {
     display: flex;

@@ -334,6 +334,11 @@ footer a {
 footer p {
     width: 70%;
     font-size: 0.9em;
+    margin-bottom: 1rem;
+}
+
+footer a:last-child {
+    margin-top: 1rem;
 }
 
 #master {

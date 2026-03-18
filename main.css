@@ -14,7 +14,6 @@ html {
 }
 
 body {
-    margin: 0;
     font-family: "Poppins", sans-serif;
     position: relative;
     background-color: hsl(210, 10%, 15%);
@@ -52,10 +51,10 @@ header {
 
 main {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    color: white;
     align-items: center;
+    justify-content: center;
+    color: white;
     text-align: center;
 }
 
@@ -111,14 +110,24 @@ h1 span {
     margin-top: 2rem;
 }
 
-select {
-    margin: 0.5rem 0 2rem 0;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    border-radius: 0.5rem;
+#top #in input,
+#top #in select,
+select,
+button {
     border: #7D7D7D 2px solid;
     background-color: hsl(210, 10%, 12.5%);
     color: white;
     font-family: "Poppins", sans-serif;
+}
+
+select,
+button {
+    border-radius: 0.5rem;
+}
+
+select {
+    margin: 0.5rem 0 2rem 0;
+    padding: 0.5rem 1rem 0.5rem 1rem;
     font-size: 1em;
     font-weight: 400;
     text-align: center;
@@ -126,6 +135,8 @@ select {
     cursor: pointer;
 }
 
+#top #in input:hover,
+#top #in select:hover,
 select:hover {
     background-color: hsl(210, 10%, 10%);
 }
@@ -164,19 +175,12 @@ form {
     width: 100%;
     padding: 0.5rem;
     border-radius: 0.5rem 0.5rem 0 0;
-    border: #7D7D7D 2px solid;
     border-bottom: none;
     background-color: hsl(210, 11%, 12.5%);
-    color: white;
-    font-family: "Poppins", sans-serif;
     text-align: center;
     font-size: 1.5em;
     font-weight: 500;
     transition: background-color 0.25s ease-in-out;
-}
-
-#top #in input:hover {
-    background-color: hsl(210, 10%, 10%);
 }
 
 #top #in select {
@@ -184,24 +188,21 @@ form {
     margin: 0;
     font-size: 1em;
     padding: 0.25rem;
-    border: #7D7D7D 2px solid;
     border-radius: 0 0 0.5rem 0.5rem;
-    background-color: hsl(210, 10%, 12.5%);
     font-weight: 300;
-    font-family: "Poppins", sans-serif;
-}
-
-#top #in select:hover {
-    background-color: hsl(210, 10%, 10%);
 }
 
 #top #in #mark2 {
     display: none;
     margin: 0;
-} #top #in #mark2 #mark21 {
+}
+
+#top #in #mark2 #mark21 {
     border-top-right-radius: 0;
     border-right: #7D7D7D 1px solid;
-} #top #in #mark2 #mark22 {
+}
+
+#top #in #mark2 #mark22 {
     border-top-left-radius: 0;
     border-left: #7D7D7D 1px solid;
 }
@@ -235,14 +236,8 @@ button {
     position: relative;
     padding: 0.5rem 2rem 0.5rem 2rem;
     font-size: 1.25em;
-    border-radius: 0.5rem;
-    border: #7D7D7D 2px solid;
-    background-color: hsl(210, 10%, 12.5%);
-    color: white;
-    font-family: "Poppins", sans-serif;
     font-weight: 400;
     z-index: 1;
-    width: auto;
 }
 
 button::before {
@@ -257,7 +252,6 @@ button::before {
     opacity: 0;
     transition: opacity 0.25s ease-in-out;
     z-index: -1;
-    opacity: 0;
 }
 
 button:hover::before {
@@ -275,7 +269,6 @@ button:hover {
         "header header header"
         "level raw conv";
     text-align: center;
-    width: auto;
 }
 
 #bottom h2 {
@@ -295,7 +288,7 @@ button:hover {
     margin-bottom: 0.25rem;
 }
 
-#bottom p{
+#bottom p {
     border-top: 1px hsl(210, 10%, 25%) solid;
     padding: 0.25rem 0 0.25rem 0;
 }

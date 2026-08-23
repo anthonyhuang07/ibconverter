@@ -102,10 +102,6 @@
                 <button type="submit">Convert!</button>
             </form>
         </article>
-        <amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-5059773208710502"
-            data-ad-slot="8529602029" data-auto-format="rspv" data-full-width="">
-            <div overflow=""></div>
-        </amp-ad>
         <section id="bottom">
             <h2 id="subjecth2">></h2>
             <div id="section-lvl">
@@ -113,6 +109,22 @@
             <div id="section-raw">
             </div>
             <div id="section-conv">
+            </div>
+        </section>
+        <amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-5059773208710502"
+            data-ad-slot="8529602029" data-auto-format="rspv" data-full-width="">
+            <div overflow=""></div>
+        </amp-ad>
+        <section id="curve">
+            <h2 id="curveh2">Grade Distribution</h2>
+            <div id="curve-card">
+                <div id="curve-plot"></div>
+                <div id="curve-readout">
+                    <p id="curve-percentile"><span class="curve-muted">Convert a mark to see your percentile</span></p>
+                    <p id="curve-detail"></p>
+                </div>
+                <p id="curve-method">Bell curve fitted to the IB's published May 2026 grade distribution for this
+                    subject and its grade boundaries. Percentiles are an estimate, not an official IB statistic.</p>
             </div>
         </section>
     </main>
@@ -125,10 +137,12 @@
             endorsed by the International Baccalaureate Organization. International Baccalaureate, Baccalauréat
             International, Bachillerato Internacional and IB are registered trademarks owned by the International
             Baccalaureate Organization.</p>
-        <a href="https://anthonyhuang.net" target="_blank">Made by Anthony Huang (WOSS IB '25 Grad)</a>
+        <p id="credit">Made by <a href="https://anthonyhuang.net/" target="_blank">Anthony Huang</a> (WOSS IB '25 Grad)
+            and <a href="https://wenxuansu.com/" target="_blank">Darren Su</a> ('27 Grad)</p>
 
     </footer>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/curve.js"></script>
     <script src="./scripts/converter.js"></script>
 </body>
 

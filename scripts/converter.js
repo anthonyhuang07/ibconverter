@@ -72,13 +72,36 @@ const colors = [
 // converted status
 let c = false
 
+// conversion tables, keyed by subject index, fetched at most once each
+const tables = {}
+
+function loadTable(index) {
+    if (tables[index] === undefined) {
+        tables[index] = fetch(jsons[index]).then(response => response.json())
+    }
+    return tables[index]
+}
+
+// the student's raw mark out of 100, or undefined when the inputs are empty
+function readMark() {
+    if (mode.value == "raw") {
+        if (raw.value == "") return undefined
+        return parseInt(Math.floor(parseFloat(raw.value)))
+    }
+    if (raw21.value == "" || raw22.value == "") return undefined
+    return parseInt(Math.floor(parseFloat(raw21.value / raw22.value) * 100))
+}
+
 bottom()
+updateCurve(null)
 
 // reset or change conversion on subject change
 subject.addEventListener('change', function (e) {
     e.preventDefault();
     if (c == true) {
         convert()
+    } else {
+        updateCurve(null)
     }
     bottom()
 })
@@ -97,6 +120,8 @@ mode.addEventListener('change', function (e) {
         raw.style.display = "none"
         raw2.style.display = "flex"
     }
+
+    updateCurve(null)
 })
 
 // convert when pressed
@@ -114,49 +139,40 @@ function convert() {
     let textSpan = document.createElement("span");
     let colSpan = document.createElement("span");
 
-    fetch(jsons[subject.value])
-        .then(response => response.json())
-        .then(data => {
-            let val = undefined;
-            if (mode.value == "raw") {
-                if (mark.value == "") {
-                    alert("Please enter a valid number.")
-                } else {
-                    val = parseInt(Math.floor(parseFloat(mark.value)));
-                }
-            } else if (mode.value == "frac") {
-                if (mark21.value == "" || mark22.value == "" || val > 100) {
-                    alert("Please enter a valid mark.")
-                } else {
-                    val = parseInt(Math.floor(parseFloat(mark21.value/mark22.value) * 100)) ;
-                }
-            }
+    const val = readMark()
 
-            if (val !== undefined) {
-                converted.innerHTML = ""
-                joobi.src = ""
-    
-                for (let level in data) {
-                    if (data[level][val] !== undefined) {
-                        let levelNum = parseInt(level.match(/\d+/)[0], 10) - 1;
-                        joobi.src = emojis[levelNum];
-                        joobi.alt = level;
-    
-                        if (matchMedia('only screen and (max-width: 900px)').matches) {
-                            colSpan.innerHTML = level
-                            location.href = "#sub"
-                        } else {
-                            colSpan.innerHTML = level + ":&nbsp;"
-                        }
-    
-                        colSpan.style.color = colors[levelNum]
-                        textSpan.innerHTML = data[level][val] + "%";
-    
-                        converted.appendChild(colSpan);
-                        converted.appendChild(textSpan);
-    
-                        break;
+    if (val === undefined) {
+        alert(mode.value == "raw" ? "Please enter a valid number." : "Please enter a valid mark.")
+        return
+    }
+
+    updateCurve(val)
+
+    loadTable(subject.value)
+        .then(data => {
+            converted.innerHTML = ""
+            joobi.src = ""
+
+            for (let level in data) {
+                if (data[level][val] !== undefined) {
+                    let levelNum = parseInt(level.match(/\d+/)[0], 10) - 1;
+                    joobi.src = emojis[levelNum];
+                    joobi.alt = level;
+
+                    if (matchMedia('only screen and (max-width: 900px)').matches) {
+                        colSpan.innerHTML = level
+                        location.href = "#sub"
+                    } else {
+                        colSpan.innerHTML = level + ":&nbsp;"
                     }
+
+                    colSpan.style.color = colors[levelNum]
+                    textSpan.innerHTML = data[level][val] + "%";
+
+                    converted.appendChild(colSpan);
+                    converted.appendChild(textSpan);
+
+                    break;
                 }
             }
         });
@@ -172,8 +188,7 @@ function bottom() {
         subjecth2.innerHTML = "Conversion Ranges - " + subjects[subject.value]
     }
 
-    fetch(jsons[subject.value])
-        .then(response => response.json())
+    loadTable(subject.value)
         .then(data => {
             for (let level in data) {
                 let levelNum = parseInt(level.match(/\d+/)[0], 10) - 1;

@@ -262,6 +262,107 @@ button:hover {
     cursor: pointer;
 }
 
+#curve {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#curve h2 {
+    margin: 4rem 0 0.5rem 0;
+    font-weight: 600;
+    font-size: 2em;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+#curve-card {
+    width: min(90%, 46rem);
+    padding: 1.5rem;
+    background-color: hsl(210, 10%, 17.5%);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#curve-plot svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    font-family: "Poppins", sans-serif;
+}
+
+#curve-plot .curve-grade {
+    font-size: 15px;
+    font-weight: 600;
+    text-anchor: middle;
+}
+
+#curve-plot .curve-tick {
+    font-size: 12px;
+    font-weight: 400;
+    text-anchor: middle;
+    fill: rgba(255, 255, 255, 0.55);
+}
+
+#curve-plot .curve-axis {
+    font-size: 12px;
+    font-weight: 300;
+    text-anchor: middle;
+    fill: rgba(255, 255, 255, 0.45);
+}
+
+#curve-plot .curve-pill {
+    font-size: 13px;
+    font-weight: 500;
+    text-anchor: middle;
+    fill: white;
+}
+
+#curve-readout {
+    border-top: 1px hsl(210, 10%, 25%) solid;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+}
+
+#curve-percentile {
+    font-size: 1.25em;
+    font-weight: 400;
+}
+
+#curve-percentile span {
+    font-size: 1.6em;
+    font-weight: 700;
+    background: linear-gradient(to right, #77C3FE, #2CBCED);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#curve-percentile .curve-muted {
+    font-size: 1em;
+    font-weight: 300;
+    background: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.55);
+}
+
+#curve-detail {
+    margin-top: 0.25rem;
+    font-size: 0.9em;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#curve-method {
+    margin-top: 1rem;
+    font-size: 0.75em;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.4);
+}
+
 #bottom {
     display: grid;
     grid-auto-columns: minmax(0, 1fr);
@@ -330,8 +431,10 @@ footer p {
     margin-bottom: 1rem;
 }
 
-footer a:last-child {
-    margin-top: 1rem;
+footer #credit {
+    width: auto;
+    font-size: 1em;
+    margin: 1rem 0 0 0;
 }
 
 #master {
@@ -383,5 +486,30 @@ footer a:last-child {
     h2 {
         display: flex;
         flex-direction: column;
+    }
+
+    #curve h2 {
+        display: block;
+        margin: 3rem 1rem 0.5rem 1rem;
+        font-size: 1.75em;
+    }
+
+    #curve-card {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    /* the plot scales down with the card, so its labels scale up to stay legible */
+    #curve-plot .curve-grade {
+        font-size: 30px;
+    }
+
+    #curve-plot .curve-tick,
+    #curve-plot .curve-axis {
+        font-size: 24px;
+    }
+
+    #curve-plot .curve-pill {
+        font-size: 26px;
     }
 }

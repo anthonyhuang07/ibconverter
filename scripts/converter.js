@@ -141,7 +141,7 @@ function convert() {
 
     const val = readMark()
 
-    if (val === undefined) {
+    if (!Number.isFinite(val) || val < 0 || val > 100) {
         alert(mode.value == "raw" ? "Please enter a valid number." : "Please enter a valid mark.")
         return
     }

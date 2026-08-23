@@ -437,6 +437,11 @@ footer #credit {
     margin: 1rem 0 0 0;
 }
 
+footer #subcredit {
+    font-size: 0.9em;
+    margin-top: 0.25rem;
+}
+
 #master {
     font-size: 1.25em;
     color: #77C3FE;
